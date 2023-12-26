@@ -9,24 +9,27 @@ public class GameManager : MonoBehaviour
     public Transform spawnPoint;
     public float maxX;
     public float spawnRate;
-    bool notGameStarted = true;
+    bool gameStarted = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+       
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && notGameStarted)
+        if (Input.GetMouseButtonDown(0) && !gameStarted)
         {
             StartSpawning();
-            notGameStarted = false;
-            Debug.Log(notGameStarted);
+            gameStarted = true;
+            Debug.Log(gameStarted);
+
+
 
         }
-      
+
 
     }
 
@@ -39,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     private void StartSpawning()
     {
-        InvokeRepeating("SpawnBlock", 0.5f, spawnRate);
+        InvokeRepeating("SpawnBlock", 5f, spawnRate);
     }
 }
 
