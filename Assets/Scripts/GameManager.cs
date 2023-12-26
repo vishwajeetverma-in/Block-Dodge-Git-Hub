@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public GameObject block;
     public Transform spawnPoint;
+    public float maxX;
+    public float spawnRate;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +18,17 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void SpawnBlock()
+    {
+        Vector2 spawnPos = spawnPoint.position; 
+        spawnPos.x = Random.Range(-maxX, maxX);
+        Instantiate(block , spawnPos, Quaternion.identity);
+    }
+
+    private void StartSpawning()
+    {
+        InvokeRepeating("SpawnBlock", 0.5f, spawnRate);
     }
 }
