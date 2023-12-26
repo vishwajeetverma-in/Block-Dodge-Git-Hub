@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject block;
+    public Transform spawnPoint;
     // Start is called before the first frame update
     void Start()
     {
