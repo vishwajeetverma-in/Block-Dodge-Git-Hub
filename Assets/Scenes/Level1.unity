@@ -561,7 +561,7 @@ MonoBehaviour:
   block: {fileID: 8018765584021112578, guid: 0530dfaeb993dda4f83aae3869d3aff2, type: 3}
   spawnPoint: {fileID: 631687079}
   maxX: 2.5
-  spawnRate: 0
+  spawnRate: 3
 --- !u!4 &1275821173
 Transform:
   m_ObjectHideFlags: 0
