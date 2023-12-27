@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     private void StartSpawning()
     {
-        InvokeRepeating("SpawnBlock", 5f, spawnRate);
+        InvokeRepeating("SpawnBlock", 0.5f, spawnRate);
     }
 }
 
