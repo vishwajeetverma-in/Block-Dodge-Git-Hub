@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class GameManager : MonoBehaviour
     public float maxX;
     public float spawnRate;
     bool gameStarted = false;
+    public GameObject tapText;
+    public TextMeshProUGUI scoreText;
+     int score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +28,7 @@ public class GameManager : MonoBehaviour
         {
             StartSpawning();
             gameStarted = true;
-            Debug.Log(gameStarted);
-
-
-
+            tapText.SetActive(false);
         }
 
 
@@ -38,6 +39,8 @@ public class GameManager : MonoBehaviour
         Vector2 spawnPos = spawnPoint.position; 
         spawnPos.x = Random.Range(-maxX, maxX);
         Instantiate(block , spawnPos, Quaternion.identity);
+        score++;
+        scoreText.text = score.ToString();
     }
 
     private void StartSpawning()
